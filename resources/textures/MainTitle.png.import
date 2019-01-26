@@ -7,7 +7,10 @@ path="res://.import/MainTitle.png-53f6c868177c954a62326780982ac48f.stex"
 [deps]
 
 source_file="res://resources/textures/MainTitle.png"
+source_md5="ce99a87f074b5a01b064380c6bfca920"
+
 dest_files=[ "res://.import/MainTitle.png-53f6c868177c954a62326780982ac48f.stex" ]
+dest_md5="f113070b6355b7cc0ae35a8e562df692"
 
 [params]
 
