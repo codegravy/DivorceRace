@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://startFloor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://startPlate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://startPlate.tscn" type="PackedScene" id=3]
 
 
 
@@ -25,8 +26,12 @@ size = 1.0
 near = 0.05
 far = 100.0
 
-[node name="RigidBody" parent="." index="2" instance=ExtResource( 2 )]
+[node name="Spatial2" parent="." index="2" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57292, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RigidBody" parent="." index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.563031, 0.828173, 0 )
 
 
