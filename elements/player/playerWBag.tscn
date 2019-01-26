@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
-[ext_resource path="res://playerHand.tscn" type="PackedScene" id=2]
+[ext_resource path="res://elements/player/playerHand.tscn" type="PackedScene" id=2]
+[ext_resource path="res://elements/player/playerBag.tscn" type="PackedScene" id=3]
 
 [node name="Spatial" type="Spatial"]
 
@@ -28,9 +29,9 @@ far = 100.0
 
 [node name="ARVRController" parent="ARVROrigin" index="1" instance=ExtResource( 2 )]
 
-controller_id = 2
+[node name="ARVRController2" parent="ARVROrigin" index="2" instance=ExtResource( 3 )]
 
-[node name="ARVRController2" parent="ARVROrigin" index="2" instance=ExtResource( 2 )]
+controller_id = 2
 
 
 [editable path="ARVROrigin/ARVRController"]

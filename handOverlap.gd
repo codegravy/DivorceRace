@@ -37,6 +37,8 @@ func _button_down(button):
 
 func _button_up(button):
 	if held_object != null:
+		if held_object.has_method("dropped"):
+			held_object.dropped()
 		held_object.mode = RigidBody.MODE_RIGID
 		held_object.apply_impulse(Vector3(0, 0, 0), controller_velocity)
 		held_object = null

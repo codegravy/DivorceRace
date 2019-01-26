@@ -15,6 +15,13 @@ run/main_scene="res://Start Room.tscn"
 boot_splash/image="res://resources/textures/MainTitle.png"
 config/icon="res://resources/textures/MainTitle.png"
 
+[autoload]
+
+global="*res://global.gd"
+player="*res://elements/player/player.tscn"
+playerBag="*res://elements/player/playerBag.tscn"
+playerHand="*res://elements/player/playerHand.tscn"
+
 [gdnative]
 
 singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
