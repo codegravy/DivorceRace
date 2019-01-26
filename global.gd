@@ -13,6 +13,12 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
+	
+func setupNetwork():
+	var peer = NetworkedMultiplayerEnet.new()
+	peer.create_client("129.244.99.101",5556);
+	get_tree().set_network_peer(peer)
+	get_tree().set_meta("network_peer",peer)
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
