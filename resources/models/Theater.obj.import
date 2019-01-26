@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Theater.obj-c6748cf40dedd0edaf69c201f75ac68b.mesh"
+
+[deps]
+
+files=[ "res://.import/Theater.obj-c6748cf40dedd0edaf69c201f75ac68b.mesh" ]
+
+source_file="res://resources/models/Theater.obj"
+dest_files=[ "res://.import/Theater.obj-c6748cf40dedd0edaf69c201f75ac68b.mesh", "res://.import/Theater.obj-c6748cf40dedd0edaf69c201f75ac68b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
