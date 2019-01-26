@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Dish.obj-7a223d211a7bb19b655c03b08f6da727.mesh"
+
+[deps]
+
+files=[ "res://.import/Dish.obj-7a223d211a7bb19b655c03b08f6da727.mesh" ]
+
+source_file="res://resources/models/Dish.obj"
+dest_files=[ "res://.import/Dish.obj-7a223d211a7bb19b655c03b08f6da727.mesh", "res://.import/Dish.obj-7a223d211a7bb19b655c03b08f6da727.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
