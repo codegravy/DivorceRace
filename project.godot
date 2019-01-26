@@ -11,7 +11,8 @@ config_version=3
 [application]
 
 config/name="DivorceRace"
-config/icon="res://icon.png"
+boot_splash/image="res://resources/textures/MainTitle.png"
+config/icon="res://resources/textures/MainTitle.png"
 
 [rendering]
 
