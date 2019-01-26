@@ -8,15 +8,19 @@ var player = load("res://elements/player/player.tscn").instance()
 var bag = load("res://elements/player/playerBag.tscn").instance()
 var hand = load("res://elements/player/playerHand.tscn").instance()
 var vr = false
+var peer = null
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	setupNetwork()
+	var id = str(peer.get_unique_id())
+	player.set_name(id)
 	pass
 	
 func setupNetwork():
-	var peer = NetworkedMultiplayerEnet.new()
-	peer.create_client("129.244.99.101",5556);
+	peer = NetworkedMultiplayerENet.new()
+	peer.create_client("129.244.99.101",5553);
 	get_tree().set_network_peer(peer)
 	get_tree().set_meta("network_peer",peer)
 
