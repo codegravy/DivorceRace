@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/TV.obj-c103afdd182b1fa61971915c19aff6e0.mesh"
+
+[deps]
+
+files=[ "res://.import/TV.obj-c103afdd182b1fa61971915c19aff6e0.mesh" ]
+
+source_file="res://resources/models/TV.obj"
+dest_files=[ "res://.import/TV.obj-c103afdd182b1fa61971915c19aff6e0.mesh", "res://.import/TV.obj-c103afdd182b1fa61971915c19aff6e0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

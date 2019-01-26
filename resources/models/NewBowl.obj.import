@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/NewBowl.obj-0b7d2981ae7b565dec49548929a8fabf.mesh"
+
+[deps]
+
+files=[ "res://.import/NewBowl.obj-0b7d2981ae7b565dec49548929a8fabf.mesh" ]
+
+source_file="res://resources/models/NewBowl.obj"
+dest_files=[ "res://.import/NewBowl.obj-0b7d2981ae7b565dec49548929a8fabf.mesh", "res://.import/NewBowl.obj-0b7d2981ae7b565dec49548929a8fabf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

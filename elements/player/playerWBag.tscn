@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://elements/player/playerHand.tscn" type="PackedScene" id=2]
+[ext_resource path="res://elements/player/playerBag.tscn" type="PackedScene" id=3]
+
+[node name="Spatial" type="Spatial"]
+
+script = ExtResource( 1 )
+
+[node name="ARVROrigin" type="ARVROrigin" parent="." index="0"]
+
+world_scale = 1.0
+
+[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin" index="0"]
+
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+
+[node name="ARVRController" parent="ARVROrigin" index="1" instance=ExtResource( 2 )]
+
+[node name="ARVRController2" parent="ARVROrigin" index="2" instance=ExtResource( 3 )]
+
+controller_id = 2
+
+
+[editable path="ARVROrigin/ARVRController"]
+[editable path="ARVROrigin/ARVRController2"]

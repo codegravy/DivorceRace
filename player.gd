@@ -7,14 +7,19 @@ extends Spatial
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	var vr = ARVRServer.find_interface("OpenVR")
-	if vr and vr.initialize():
-		get_viewport().arvr = true
-		get_viewport().hdr = false
-		OS.vsync_enabled = false
-		Engine.target_fps = 90
-	pass
-
+	pass;
+	
+func setHand(setBag):
+	var currentRightHand = get_node("ARVROrigin/rightHand").get_child(0);
+	var global = get_node("/root/global");
+	print(currentRightHand)
+	get_node("ARVROrigin/rightHand").remove_child(currentRightHand);
+	var newHand
+	if setBag:
+		newHand = global.bag
+	else:
+		newHand = global.hand
+	get_node("ARVROrigin/rightHand").add_child(newHand)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
