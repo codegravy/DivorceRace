@@ -18,9 +18,6 @@ config/icon="res://resources/textures/MainTitle.png"
 [autoload]
 
 global="*res://global.gd"
-player="*res://elements/player/player.tscn"
-playerBag="*res://elements/player/playerBag.tscn"
-playerHand="*res://elements/player/playerHand.tscn"
 
 [gdnative]
 
