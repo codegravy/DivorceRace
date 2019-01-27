@@ -17,7 +17,7 @@ is_hemisphere = false
 
 radius = 1.0
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
