@@ -17,7 +17,7 @@ func _ready():
 	pass
 
 sync func start_players():
-	if !vr:
+	if !global.vr:
 		return
 	var standing = point1
 	if get_tree().is_network_server():
