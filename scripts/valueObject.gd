@@ -23,10 +23,11 @@ func dropped():
 		rset('picked_up',false)
 		var bodies = bag_check.get_overlapping_bodies()
 		if len(bodies) > 0:
+			print(bodies)
 			for body in bodies:
 				if ("bag" in body):
+					print('scoring ' + str(value))
 					if body.addItem(self.size,self.value):
-						print('scoring ' + str(value))
 						rpc("remove")
 						break
 

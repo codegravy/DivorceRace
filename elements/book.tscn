@@ -44,7 +44,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0189646, 0.155249, 0.0515002
 shape = SubResource( 1 )
 disabled = false
 
-[node name="Scene Root" type="Spatial" parent="CollisionShape" index="0" instance=ExtResource( 2 )]
+[node name="Scene Root" parent="CollisionShape" index="0" instance=ExtResource( 2 )]
 
 transform = Transform( 0.151808, 0, 0, 0, -6.63574e-009, -0.226693, 0, 0.151808, -9.90908e-009, 0.0109845, -0.028017, 0.0127417 )
 _sections_unfolded = [ "Transform" ]
@@ -64,13 +64,14 @@ priority = 0.0
 monitoring = true
 monitorable = true
 collision_layer = 1
-collision_mask = 1
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="CollisionShape/Area" index="0"]
 
