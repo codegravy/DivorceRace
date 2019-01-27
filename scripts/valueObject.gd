@@ -32,13 +32,13 @@ sync func remove():
 	queue_free()
 
 func pickup():
-	print(get_network_master())
+	print(str(get_network_master()))
 	if picked_up:
 		return false
-	print("claming object "+get_tree().get_network_unique_id())
+	print("claming object "+str(get_tree().get_network_unique_id()))
 	set_network_master(get_tree().get_network_unique_id())
 	rset('picked_up',true)
-	print(get_network_master())
+	print(str(get_network_master()))
 	return true
 
 func _process(delta):
