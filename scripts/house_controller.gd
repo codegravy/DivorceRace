@@ -18,6 +18,7 @@ func _ready():
 
 sync func start_players():
 	if !global.vr:
+		get_node('spectator').make_current()
 		return
 	var standing = point1
 	if get_tree().is_network_server():
