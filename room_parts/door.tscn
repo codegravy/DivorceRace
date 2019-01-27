@@ -6,9 +6,9 @@
 
 extents = Vector3( 5.56731, 10.4705, 0.384127 )
 
-[node name="RigidBody" type="RigidBody"]
+[node name="RigidBody" type="RigidBody" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.94062, 12.8726, 34.8969 )
+transform = Transform( 0.623244, 0, 0, 0, 0.519467, 0, 0, 0, 0.0433582, 0.1332, 5.47595, -0.0926993 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -37,13 +37,13 @@ angular_damp = -1.0
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.28195, -1.90239, -35.3454 )
+transform = Transform( 0.0478287, 0, 0, 0, 0.0478287, 0, 0, 0, 0.303753, -0.0392304, -4.94229, -0.00229096 )
 shape = SubResource( 1 )
 disabled = false
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49409, 1.38395, 3.14728 )
+transform = Transform( 0.0162421, 0, 0, 0, 0.0188436, 0, 0, 0, 0.139448, -0.0431716, -5.43881, -0.00428963 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -56,5 +56,6 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
+material/1 = null
 
 
