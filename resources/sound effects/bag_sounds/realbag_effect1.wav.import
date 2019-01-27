@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/realbag_effect1.wav-dd9993c192ab94fab2b40149d4680dd2.sample"
+
+[deps]
+
+source_file="res://resources/sound effects/bag_sounds/realbag_effect1.wav"
+dest_files=[ "res://.import/realbag_effect1.wav-dd9993c192ab94fab2b40149d4680dd2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
