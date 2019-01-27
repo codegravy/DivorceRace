@@ -28,14 +28,13 @@ func dropped():
 sync func remove():
 	queue_free()
 func _process(delta):
-	if !slave_ready:
-		return
 	if is_network_master():
 		rset_unreliable("slave_transform",global_transform)
 		rset_unreliable("slave_ready",true)
 	else:
-		self.global_transform = slave_transform
-		slave_ready = false
+		if slave_ready:
+			self.global_transform = slave_transform
+			slave_ready = false
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

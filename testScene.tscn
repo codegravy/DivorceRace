@@ -14,7 +14,7 @@ size = Vector2( 2, 2 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[node name="Spatial" type="Spatial" index="0"]
+[node name="Spatial" type="Spatial"]
 
 [node name="StaticBody" type="StaticBody" parent="." index="0"]
 
