@@ -7,6 +7,7 @@ extends Node
 var player = load("res://elements/player/player.tscn").instance()
 var ready = false
 var networking
+var players_configured = []
 
 func _ready():
 	networking = get_node("/root/networking")
@@ -25,7 +26,11 @@ sync func pre_configure_game():
 
 sync func done_preconfiguring(who):
 	if get_tree().is_network_server():
-		networking.player_ready(who)
+		if !(who in players_configured):
+			players_configured.append(who)
+			print("Player " + str(who) + " is loaded")
+			if len(players_configured) > 1:
+				rpc('post_configure_game')
 
 sync func post_configure_game():
 	get_tree().set_pause(false)
