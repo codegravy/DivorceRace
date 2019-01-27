@@ -69,5 +69,5 @@ func _physics_process(delta):
 		held_object.scale = held_scale
 
 func _process(delta):
-	if global.peer.get_connection_status() == 2:
+	if networking.peer.get_connection_status() == 2:
 		rset_unreliable("slave_transform",self.global_transform)

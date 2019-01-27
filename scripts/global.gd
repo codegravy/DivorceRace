@@ -6,6 +6,10 @@ extends Node
 # var b = "textvar"
 var player = load("res://elements/player/player.tscn").instance()
 var ready = false
+var networking
+
+func _ready():
+	networking = get_node("/root/networking")
 		
 func start():
 	rpc("pre_configure_game")

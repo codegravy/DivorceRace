@@ -24,6 +24,8 @@ func _ready():
 		startServer()
 	else:
 		startClient()
+	players.add_child(global.player)
+	global.player.set_name(str(peer.get_unique_id()))
 	pass
 
 func startServer():
