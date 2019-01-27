@@ -13,10 +13,10 @@ var global
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	var players = Node.new()
 	global = get_node('/root/global')
-	players.set_name('players')
-	get_tree().get_root().call_deferred("add_child",players)
+	global.players = Node.new()
+	global.players.set_name('players')
+	get_tree().get_root().call_deferred("add_child",global.players)
 	peer = NetworkedMultiplayerENet.new()
 	var ips = IP.get_local_addresses()
 	print(ips)

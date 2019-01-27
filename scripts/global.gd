@@ -8,6 +8,7 @@ var player = load("res://elements/player/player.tscn").instance()
 var ready = false
 var networking
 var players_configured = []
+var players
 
 func _ready():
 	networking = get_node("/root/networking")

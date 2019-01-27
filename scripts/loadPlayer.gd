@@ -15,7 +15,7 @@ func _ready():
 		get_viewport().hdr = false
 		OS.vsync_enabled = false
 		Engine.target_fps = 90
-		players.add_child(global.player)
+		global.players.add_child(global.player)
 
 func createMultiPlayer(id):
 	pass
