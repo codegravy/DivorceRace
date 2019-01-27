@@ -75,6 +75,9 @@ remote func pre_configure_game(id):
 	container.add_child(world)
 	rpc_id(1,"done_preconfiguring",myId)
 	
+remote func make_master():
+	emit_signal("make_master")
+	
 remote func post_configure_game():
 	get_tree().set_pause(false)
 #func _process(delta):

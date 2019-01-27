@@ -14,6 +14,7 @@ func _ready():
 	# Initialization here
 	bag_check = get_node("CollisionShape/Area")
 	global = get_node("/root/global")
+	global.connect("make_master",self,'make_master')
 	pass
 
 func dropped():
@@ -25,6 +26,9 @@ func dropped():
 				if body.addItem(self.size,self.value):
 					rpc("remove")
 					break
+
+func make_master():
+	set_network_master(get_tree().get_network_unique_id())
 
 sync func remove():
 	queue_free()
