@@ -18,7 +18,7 @@ func _ready():
 
 func dropped():
 	var bodies = bag_check.get_overlapping_bodies()
-	print(slave_ready)
+	print(is_network_master())
 	if len(bodies) > 0:
 		for body in bodies:
 			if ("bag" in body):
