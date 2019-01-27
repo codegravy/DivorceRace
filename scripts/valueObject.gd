@@ -8,6 +8,7 @@ export var value = 1;
 var bag_check
 slave var slave_transform = Transform()
 slave var slave_ready = false
+sync var picked_up = false
 var global
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -18,20 +19,26 @@ func _ready():
 	pass
 
 func dropped():
-	var bodies = bag_check.get_overlapping_bodies()
-	print(is_network_master())
-	if len(bodies) > 0:
-		for body in bodies:
-			if ("bag" in body):
-				if body.addItem(self.size,self.value):
-					rpc("remove")
-					break
-
-func make_master():
-	set_network_master(get_tree().get_network_unique_id())
+	if is_network_master():
+		rset('picked_up',false)
+		var bodies = bag_check.get_overlapping_bodies()
+		if len(bodies) > 0:
+			for body in bodies:
+				if ("bag" in body):
+					if body.addItem(self.size,self.value):
+						rpc("remove")
+						break
 
 sync func remove():
 	queue_free()
+
+func pickup():
+	if picked_up:
+		return false
+	set_network_master(get_tree().get_network_unique_id())
+	rset('picked_up',true)
+	return true
+
 func _process(delta):
 	if is_network_master():
 		rset_unreliable("slave_transform",global_transform)
