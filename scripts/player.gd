@@ -28,7 +28,7 @@ func setHand(setBag):
 	get_node("VROrigin/rightHand").add_child(newHand)
 
 func _process(delta):
-	if global.peer.get_connection_status() == 2:
+	if networking.peer.get_connection_status() == 2:
 		rset_unreliable("slave_transform",self.global_transform)
 
 func teleport_to_standing_point():
