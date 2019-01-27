@@ -1,0 +1,161 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://room_parts/BlankWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://room_parts/doorwall.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PlaneShape" id=1]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="PlaneMesh" id=2]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 2, 2 )
+subdivide_width = 0
+subdivide_depth = 0
+
+[node name="Room" type="Spatial"]
+
+editor/display_folded = true
+
+[node name="RigidBody" type="RigidBody" parent="." index="0" instance=ExtResource( 1 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08723, -0.399992, -0.085218 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="RigidBody2" type="RigidBody" parent="." index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49244, -5.14964, -2.50325 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+
+[node name="RigidBody3" type="RigidBody" parent="." index="2" instance=ExtResource( 1 )]
+
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, -17.5309, -0.351769, -3.29503 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Colliders" type="Spatial" parent="." index="3"]
+
+editor/display_folded = true
+transform = Transform( 0.435234, 0, 0, 0, 1, 0, 0, 0, 0.435234, -9.27922, -1.69625, -1.65402 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Colliders" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="CollisionShape2" type="CollisionShape" parent="Colliders" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.40906, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="CollisionShape3" type="CollisionShape" parent="Colliders" index="2"]
+
+transform = Transform( 1, 0, 0, 0, 0.0349943, -0.434968, 0, 2.29621, 0.0349943, 0, -1.49226, 7.09482 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="MeshInstance2" type="MeshInstance" parent="." index="4"]
+
+transform = Transform( 4.78703, 0, 0, 0, 1, 0, 0, 0, 4.78703, -9.27922, -5.15526, -1.65402 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2" index="0"]
+
+transform = Transform( 0.208898, 0, 0, 0, 1, 0, 0, 0, 0.208898, 1.93841, 5.15526, 0.345521 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+
