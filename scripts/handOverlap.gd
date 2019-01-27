@@ -23,8 +23,11 @@ func _button_down(button):
 	print(button)
 	if button == 2:
 		raycast.force_raycast_update()
+		print('checking raycast')
 		if raycast.is_colliding():
+			print('found raycast')
 			var door = raycast.get_collider()
+			print(door)
 			if (door.has_method('on_click')):
 				door.on_click(self)
 
