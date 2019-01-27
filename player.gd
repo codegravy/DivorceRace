@@ -10,16 +10,16 @@ func _ready():
 	pass;
 	
 func setHand(setBag):
-	var currentRightHand = get_node("ARVROrigin/rightHand").get_child(0);
+	var currentRightHand = get_node("VROrigin/rightHand").get_child(0);
 	var global = get_node("/root/global");
 	print(currentRightHand)
-	get_node("ARVROrigin/rightHand").remove_child(currentRightHand);
+	get_node("VROrigin/rightHand").remove_child(currentRightHand);
 	var newHand
 	if setBag:
 		newHand = global.bag
 	else:
 		newHand = global.hand
-	get_node("ARVROrigin/rightHand").add_child(newHand)
+	get_node("VROrigin/rightHand").add_child(newHand)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
