@@ -25,7 +25,7 @@ subdivide_depth = 0
 
 [node name="Door" type="StaticBody" parent="Walls" index="0" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0673631, 0.0314221, -3.21552 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0673631, 0.0314221, -2.42442 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -37,7 +37,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="LDoor" type="StaticBody" parent="Walls" index="1" instance=ExtResource( 1 )]
 
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -2.33941, 0.0433433, 0.513523 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -0.736959, 0, -3.22135e-008, -2.33941, 0.0433433, -0.542141 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -50,7 +50,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RDoor" type="StaticBody" parent="Walls" index="2" instance=ExtResource( 1 )]
 
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 2.38609, 0.0306387, 0.163604 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 0.736959, 0, -3.22135e-008, 2.38609, 0.0306387, -0.800016 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -98,7 +98,7 @@ material/0 = null
 
 [node name="ArmChair" parent="Items" index="0" instance=ExtResource( 2 )]
 
-transform = Transform( -0.902448, 0, 0.430799, 0, 1, 0, -0.430799, 0, -0.902448, -1.03332, 1.10492, 2.00003 )
+transform = Transform( -0.902448, 0, 0.430799, 0, 1, 0, -0.430799, 0, -0.902448, -1.03332, 1.10492, 0.604787 )
 
 [node name="Clock" type="RigidBody" parent="Items" index="1" instance=ExtResource( 3 )]
 
@@ -167,7 +167,7 @@ value = 1
 
 [node name="Table" type="RigidBody" parent="Items" index="3" instance=ExtResource( 6 )]
 
-transform = Transform( 0.341252, 0, 0, 0, 0.751786, 0, 0, 0, 0.161073, 0.762339, 0.0589573, 2.35924 )
+transform = Transform( 0.341252, 0, 0, 0, 0.751786, 0, 0, 0, 0.161073, 0.762339, 0.0589573, 0.963996 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -197,9 +197,9 @@ script = ExtResource( 4 )
 size = 1
 value = 1
 
-[node name="RigidBody2" type="RigidBody" parent="Items" index="4" instance=ExtResource( 7 )]
+[node name="Lamp" type="RigidBody" parent="Items" index="4" instance=ExtResource( 7 )]
 
-transform = Transform( 0.637555, 0, 0, 0, 0.59371, 0, 0, 0, 0.637555, 0.656134, 1.09186, 2.37746 )
+transform = Transform( 0.637555, 0, 0, 0, 0.59371, 0, 0, 0, 0.637555, 0.656134, 1.15451, 0.982212 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
