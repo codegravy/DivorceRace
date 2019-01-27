@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Kinfe.obj-d296b25e1eeb6da73c70e64f52fd89e2.mesh"
+
+[deps]
+
+files=[ "res://.import/Kinfe.obj-d296b25e1eeb6da73c70e64f52fd89e2.mesh" ]
+
+source_file="res://resources/models/Kinfe.obj"
+dest_files=[ "res://.import/Kinfe.obj-d296b25e1eeb6da73c70e64f52fd89e2.mesh", "res://.import/Kinfe.obj-d296b25e1eeb6da73c70e64f52fd89e2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
