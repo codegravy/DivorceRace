@@ -23,4 +23,4 @@ func setHand(setBag):
 	get_node("VROrigin/rightHand").add_child(newHand)
 func _process(delta):
 	if global.peer.get_connection_status() == 2:
-		rset_unreliable("global_transform",global_tranform)
+		rset_unreliable("slave_transform",self.global_transform)

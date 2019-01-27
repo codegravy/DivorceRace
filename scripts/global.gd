@@ -15,21 +15,16 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	var global = get_node("/root/global")
-	var root = get_node("/root/")
 	var vr = ARVRServer.find_interface("OpenVR")
-	players.set_name("players")
-	root.call_deferred("add_child",players)
+	setupNetwork()
 	if vr and vr.initialize():
 		get_viewport().arvr = true
 		get_viewport().hdr = false
 		OS.vsync_enabled = false
 		Engine.target_fps = 90
 		global.vr = true
-		players.add_child(global.player)
-	setupNetwork()
-	var id = peer.get_unique_id()
-	player.set_name(str(id))
-	player.set_network_master(id)
+		global.player.set_name(str(get_tree().get_network_unique_id()))
+		get_node("/root/container/players/").add_child(global.player)
 	pass
 	
 func setupNetwork():
@@ -41,27 +36,28 @@ func setupNetwork():
 	get_tree().connect("network_peer_disconnected", self, "_client_disconnected")
 
 	
-func ready():
-	rpc_id(1, "player_ready", str(peer.get_unique_id()))
+remote func ready():
+	global.player.set_network_master(get_tree().get_network_unique_id())
+	print(global.player.is_network_master())
 func _client_connected(id):
 	if id == peer.get_unique_id() || id == 1:
 		return;
 	print("Peer " + str(id) + " joined")
 	var newPeer = load("res://elements/player/fakePlayer.tscn").instance()
 	newPeer.set_name(str(id))
-	get_node("/root/players").add_child(newPeer)
+	get_node("/root/container/players").add_child(newPeer)
 	
 func _client_disconnected(id):
 	print("Client " + str(id) + " disconnected")
 	var newClient = get_node("/root/players/").getNode(str(id))
-	get_node("/root/players/").remove_child(newClient)
+	get_node("/root/container/players/").remove_child(newClient)
 remote func existing_players(players):
 	for player in players:
 		var id = player
 		print("Peer " + str(id) + " joined")
 		var newPeer = load("res://elements/player/fakePlayer.tscn").instance()
 		newPeer.set_name(str(id))
-		get_node("/root/players").add_child(newPeer)
+		get_node("/root/container/players").add_child(newPeer)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

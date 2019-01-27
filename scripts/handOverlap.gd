@@ -10,6 +10,8 @@ var grab_area
 var hand_mesh
 var grab_pos_node
 
+slave var slave_transform = Transform()
+
 func _ready():
 	grab_area = get_node("Spatial/Area")
 	hand_mesh = get_node("Spatial/HandMesh")
@@ -64,4 +66,4 @@ func _physics_process(delta):
 
 func _process(delta):
 	if global.peer.get_connection_status() == 2:
-		rset_unreliable("global_transform",global_tranform)
+		rset_unreliable("slave_transform",self.global_transform)

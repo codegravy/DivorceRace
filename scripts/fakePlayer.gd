@@ -1,10 +1,9 @@
 extends Node
 
+remote var slave_transform = Transform()
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-
-slave var slave_transform = Transform()
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -12,5 +11,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	if global.peer.get_connection_status() == 2:
-		rset_unreliable("slave_transform",self.global_transform)
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+	self.global_transform = slave_transform
+	pass
