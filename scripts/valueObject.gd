@@ -18,8 +18,8 @@ func _ready():
 
 func dropped():
 	print(get_network_master())
-	rset('picked_up',false)
 	if is_network_master():
+		rset('picked_up',false)
 		var bodies = bag_check.get_overlapping_bodies()
 		if len(bodies) > 0:
 			for body in bodies:
@@ -34,19 +34,16 @@ sync func remove():
 func pickup():
 	if picked_up:
 		return false
-	if get_tree().is_network_server():
-		set_network_id(1)
-		rset('picked_up',true)
-		print(str(get_network_master()))
-		return true
-	else:
-		rpc_id(1,'change_owner',get_tree().get_network_unique_id())
+	rpc('change_owner',get_tree().get_network_unique_id())
+	return true
 		
-remote func change_owner(id):
+sync func change_owner(id):
 	set_network_master(id)
+	picked_up = true
 
 func _process(delta):
 	if is_network_master():
+		print("updating")
 		rset_unreliable("slave_transform",global_transform)
 	else:
 		self.global_transform = slave_transform
