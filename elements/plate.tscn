@@ -7,7 +7,7 @@
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="RigidBody" type="RigidBody"]
+[node name="RigidBody" type="RigidBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -40,7 +40,7 @@ value = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-transform = Transform( 1.03178, 0, 0, 0, 0.134726, 0, 0, 0, 0.965576, -0.0272982, 0.211842, 0 )
+transform = Transform( 0.390595, 0, 0, 0, 0.0825484, 0, 0, 0, 0.365532, -0.0272982, 0.211842, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
@@ -63,7 +63,6 @@ material/0 = null
 
 [node name="Area" type="Area" parent="CollisionShape" index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
