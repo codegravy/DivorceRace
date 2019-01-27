@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Armchair.obj-a51c7188da6aab61c0f2981c25f722cc.mesh"
+
+[deps]
+
+files=[ "res://.import/Armchair.obj-a51c7188da6aab61c0f2981c25f722cc.mesh" ]
+
+source_file="res://resources/models/Armchair.obj"
+dest_files=[ "res://.import/Armchair.obj-a51c7188da6aab61c0f2981c25f722cc.mesh", "res://.import/Armchair.obj-a51c7188da6aab61c0f2981c25f722cc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
