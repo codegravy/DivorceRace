@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Couch.obj-f6630230b3e6aa19562d4ae331eec063.mesh"
+
+[deps]
+
+files=[ "res://.import/Couch.obj-f6630230b3e6aa19562d4ae331eec063.mesh" ]
+
+source_file="res://resources/models/Couch.obj"
+dest_files=[ "res://.import/Couch.obj-f6630230b3e6aa19562d4ae331eec063.mesh", "res://.import/Couch.obj-f6630230b3e6aa19562d4ae331eec063.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
