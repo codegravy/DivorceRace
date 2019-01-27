@@ -28,8 +28,8 @@ func _button_down(button):
 					if body is RigidBody:
 						if !("NO_PICKUP" in body):
 							var safe = true
-							if held_object.has_method("pickup"):
-								safe = held_object.pickup()
+							if body.has_method("pickup"):
+								safe = body.pickup()
 							if safe:
 								rigid_body = body
 								break
@@ -69,5 +69,5 @@ func _physics_process(delta):
 		held_object.scale = held_scale
 
 func _process(delta):
-	if global.peer.get_connection_status() == 2:
+	if networking.peer.get_connection_status() == 2:
 		rset_unreliable("slave_transform",self.global_transform)

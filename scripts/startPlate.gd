@@ -8,5 +8,5 @@ func _on_RigidBody_body_entered(body):
 		var player = get_node("/root/global").player
 		player.setHand(true)
 		print('player ready');
-		get_node('/root/global').player_ready()
+		get_node('/root/networking').player_ready()
 	pass # replace with function body
