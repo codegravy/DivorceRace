@@ -50,18 +50,18 @@ script = ExtResource( 1 )
 size = 1
 value = 1
 
-[node name="CollisionShape5" type="CollisionShape" parent="." index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0139954, 0.544481, -0.165602 )
 shape = SubResource( 1 )
 disabled = false
 
-[node name="Scene Root" parent="CollisionShape5" index="0" instance=ExtResource( 2 )]
+[node name="Scene Root" parent="CollisionShape" index="0" instance=ExtResource( 2 )]
 
 transform = Transform( 0.756015, 0, 0, 0, 0.610154, 0, 0, 0, 0.559569, -0.12617, -0.634634, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area" type="Area" parent="CollisionShape5" index="1"]
+[node name="Area" type="Area" parent="CollisionShape" index="1"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -85,25 +85,25 @@ reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="CollisionShape5/Area" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="CollisionShape/Area" index="0"]
 
 transform = Transform( 0.760458, 0, 0, 0, 0.579944, 0, 0, 0, 0.571299, -0.0121319, -0.342146, -0.00271523 )
 shape = SubResource( 2 )
 disabled = false
 
-[node name="CollisionShape2" type="CollisionShape" parent="CollisionShape5/Area" index="1"]
+[node name="CollisionShape2" type="CollisionShape" parent="CollisionShape/Area" index="1"]
 
 transform = Transform( 0.760458, 0, 0, 0, 0.579944, 0, 0, 0, 0.571299, -2.52409, -0.0057959, -0.00271523 )
 shape = SubResource( 3 )
 disabled = false
 
-[node name="CollisionShape3" type="CollisionShape" parent="CollisionShape5/Area" index="2"]
+[node name="CollisionShape3" type="CollisionShape" parent="CollisionShape/Area" index="2"]
 
 transform = Transform( 0.760458, 0, 0, 0, 0.579944, 0, 0, 0, 0.571299, 2.51166, -0.0057959, -0.00271523 )
 shape = SubResource( 3 )
 disabled = false
 
-[node name="CollisionShape4" type="CollisionShape" parent="CollisionShape5/Area" index="3"]
+[node name="CollisionShape4" type="CollisionShape" parent="CollisionShape/Area" index="3"]
 
 transform = Transform( 0.760458, 0, 0, 0, 0.579944, 0, 0, 0, 0.571299, -0.0121319, -0.0057959, -0.451324 )
 shape = SubResource( 4 )
