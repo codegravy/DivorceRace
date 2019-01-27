@@ -61,3 +61,7 @@ func _physics_process(delta):
 		var held_scale = held_object.scale
 		held_object.global_transform = grab_pos_node.global_transform
 		held_object.scale = held_scale
+
+func _process(delta):
+	if global.peer.get_connection_status() == 2:
+		rset_unreliable("global_transform",global_tranform)

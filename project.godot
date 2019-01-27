@@ -17,7 +17,7 @@ config/icon="res://resources/textures/MainTitle.png"
 
 [autoload]
 
-global="*res://global.gd"
+global="*res://scripts/global.gd"
 
 [gdnative]
 

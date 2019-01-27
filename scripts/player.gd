@@ -23,9 +23,4 @@ func setHand(setBag):
 	get_node("VROrigin/rightHand").add_child(newHand)
 func _process(delta):
 	if global.peer.get_connection_status() == 2:
-		var positions = {}
-		positions.base = self.global_transform
-		positions.camera = get_node("VROrigin/PlayerCamera").global_transform
-		positions.left = get_node("VROrigin/leftHand").global_transform
-		positions.right = get_node("VROrigin/rightHand").global_transform
-		rpc_unreliable("updatePlayerPositions",str(global.peer.get_unique_id()),positions)
+		rset_unreliable("global_transform",global_tranform)
