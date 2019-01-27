@@ -27,8 +27,9 @@ func _ready():
 		global.vr = true
 		players.add_child(global.player)
 	setupNetwork()
-	var id = str(peer.get_unique_id())
-	player.set_name(id)
+	var id = peer.get_unique_id()
+	player.set_name(str(id))
+	player.set_network_master(id)
 	pass
 	
 func setupNetwork():
@@ -36,10 +37,24 @@ func setupNetwork():
 	peer.create_client("129.244.99.101",5553);
 	get_tree().set_network_peer(peer)
 	get_tree().set_meta("network_peer",peer)
+	get_tree().connect("network_peer_connected", self, "_client_connected")
+	get_tree().connect("network_peer_disconnected", self, "_client_disconnected")
 
 	
 func ready():
 	rpc_id(1, "player_ready", str(peer.get_unique_id()))
+func _client_connected(id):
+	if id == peer.get_unique_id():
+		return;
+	print("Peer " + str(id) + " joined")
+	var newPeer = load("res://elements/player/fakePlayer.tscn").instance()
+	newPeer.set_name(str(id))
+	get_node("/root/players").add_child(newPeer)
+	
+func _client_disconnected(id):
+	print("Client " + str(id) + " disconnected")
+	var newClient = get_node("/root/players/").getNode(str(id))
+	get_node("/root/players/").remove_child(newClient)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

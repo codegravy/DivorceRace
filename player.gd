@@ -22,16 +22,10 @@ func setHand(setBag):
 		newHand = global.hand
 	get_node("VROrigin/rightHand").add_child(newHand)
 func _process(delta):
-	var positions = {}
-	positions.base = self.global_transform
-	positions.camera = get_node("VROrigin/PlayerCamera").global_transform
-	positions.left = get_node("VROrigin/leftHand").global_transform
-	positions.right = get_node("VROrigin/rightHand").global_transform
-	print(positions)
-	rpc_unreliable("updatePlayerPositions",str(global.peer.get_unique_id()),positions)
-remote func updatePlayerPositions(id,positions):
-	var player = get_node("/root/players/").get_node(id)
-	player.global_transform = positions.base
-	get_node("VROrigin/PlayerCamera").global_transform = positions.camera
-	get_node("VROrigin/leftHand").global_transform = positions.left
-	get_node("VROrigin/rightHand").global_transform = positions.right
+	if global.peer.get_connection_status() == 2:
+		var positions = {}
+		positions.base = self.global_transform
+		positions.camera = get_node("VROrigin/PlayerCamera").global_transform
+		positions.left = get_node("VROrigin/leftHand").global_transform
+		positions.right = get_node("VROrigin/rightHand").global_transform
+		rpc_unreliable("updatePlayerPositions",str(global.peer.get_unique_id()),positions)
