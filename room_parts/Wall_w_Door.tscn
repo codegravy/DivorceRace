@@ -6,7 +6,7 @@
 
 extents = Vector3( 19.604, 19.627, 2.43216 )
 
-[node name="StaticBody" type="StaticBody"]
+[node name="StaticBody" type="StaticBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
