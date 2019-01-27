@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://resources/models/Ball OBJ.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://scripts/valueObject.gd" type="Script" id=1]
+[ext_resource path="res://resources/models/Ball OBJ.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -33,6 +34,9 @@ linear_velocity = Vector3( 0, 0, 0 )
 linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
+script = ExtResource( 1 )
+size = 1
+value = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
@@ -51,7 +55,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 1 )
+mesh = ExtResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -72,13 +76,14 @@ priority = 0.0
 monitoring = true
 monitorable = true
 collision_layer = 1
-collision_mask = 1
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="CollisionShape/Area" index="0"]
 

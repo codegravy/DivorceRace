@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://resources/models/PictureFrame/PictureFrame.dae" type="PackedScene" id=1]
+[ext_resource path="res://scripts/valueObject.gd" type="Script" id=1]
+[ext_resource path="res://resources/models/PictureFrame/PictureFrame.dae" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -33,6 +34,9 @@ linear_velocity = Vector3( 0, 0, 0 )
 linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
+script = ExtResource( 1 )
+size = 1
+value = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
@@ -40,7 +44,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.914046, 0.255361, 0.0168592 
 shape = SubResource( 1 )
 disabled = false
 
-[node name="Scene Root" parent="CollisionShape" index="0" instance=ExtResource( 1 )]
+[node name="Scene Root" parent="CollisionShape" index="0" instance=ExtResource( 2 )]
 
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0226766, -0.0370919, 0.341622 )
 _sections_unfolded = [ "Transform" ]
@@ -60,13 +64,14 @@ priority = 0.0
 monitoring = true
 monitorable = true
 collision_layer = 1
-collision_mask = 1
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2" type="CollisionShape" parent="CollisionShape/Area" index="0"]
 

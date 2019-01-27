@@ -12,7 +12,7 @@ func _ready():
 	# Initialization here
 	global = get_node('/root/global')
 	point1 = get_node(point1).get_path()
-	point1 = get_node(point2).get_path()
+	point2 = get_node(point2).get_path()
 	call_deferred("start_players")
 	pass
 

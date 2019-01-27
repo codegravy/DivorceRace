@@ -12,7 +12,7 @@ point2 = NodePath("Room3")
 
 [node name="Room1" type="Spatial" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6803, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.98593, 6.109, 0 )
 
 [node name="Spatial" parent="Room1" index="0" instance=ExtResource( 2 )]
 
@@ -24,7 +24,7 @@ next_room = NodePath("../../Room2")
 
 [node name="Room2" type="Spatial" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7336, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96807, 0, 0 )
 
 [node name="Spatial" parent="Room2" index="0" instance=ExtResource( 2 )]
 
@@ -36,7 +36,7 @@ next_room = NodePath("../../Room3")
 
 [node name="Room3" type="Spatial" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.5256 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33475, 0, -0.0706024 )
 
 [node name="Spatial" parent="Room3" index="0" instance=ExtResource( 2 )]
 
@@ -48,7 +48,7 @@ next_room = NodePath("../../Room4")
 
 [node name="Room4" type="Spatial" parent="." index="3"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.4112 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18236, 6.37313, 0.99008 )
 
 [node name="Spatial" parent="Room4" index="0" instance=ExtResource( 2 )]
 
@@ -57,5 +57,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.4112 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177626, 0.496652, -2.62223 )
 _sections_unfolded = [ "Collision", "Transform" ]
 next_room = NodePath("../../Room1")
+
+[node name="Camera" type="Camera" parent="." index="4"]
+
+transform = Transform( 1, 0, 0, 0, 0.986506, 0.163724, 0, -0.163724, 0.986506, 0, 8.09271, 15.3296 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
 
 

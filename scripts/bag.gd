@@ -14,6 +14,7 @@ func _ready():
 	# Initialization here
 	pass
 func addItem(value,size):
+	print('checking value')
 	if currentSize + size <= totalSize:
 		currentSize += size
 		totalValue += value
