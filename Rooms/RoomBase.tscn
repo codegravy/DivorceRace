@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://room_parts/doorwall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://room_parts/BlankWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://room_parts/Colliders.tscn" type="PackedScene" id=3]
+
+[node name="Room" type="Spatial" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.95322, 5.06873, 0 )
+
+[node name="RigidBody4" parent="." index="0" instance=ExtResource( 1 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -8.2546, -5.14964, -1.56185 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RigidBody2" parent="." index="1" instance=ExtResource( 1 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49244, -5.14964, -2.50325 )
+
+[node name="RigidBody3" parent="." index="2" instance=ExtResource( 2 )]
+
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, -17.5309, -0.351769, -3.29503 )
+
+[node name="Colliders" parent="." index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 0.435234, 0, 0, 0, 1, 0, 0, 0, 0.435234, -9.40913, -1.73179, -2.08789 )
+
+
