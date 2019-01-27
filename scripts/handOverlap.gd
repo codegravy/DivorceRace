@@ -28,8 +28,8 @@ func _button_down(button):
 					if body is RigidBody:
 						if !("NO_PICKUP" in body):
 							var safe = true
-							if held_object.has_method("pickup"):
-								safe = held_object.pickup()
+							if body.has_method("pickup"):
+								safe = body.pickup()
 							if safe:
 								rigid_body = body
 								break

@@ -55,8 +55,11 @@ func _client_disconnected(id):
 	var newClient = get_node("/root/players/").get_node(str(id))
 	get_node("/root/players/").remove_child(newClient)
 	
+func player_ready():
+	rpc('_player_ready',peer.get_unique_id())
+
 sync func _player_ready(id):
-	if peer.is_network_server():
+	if get_tree().is_network_server():
 		if !(id in players_ready):
 			players_ready.append(id)
 			print("Player " + str(id) + " readied up")
