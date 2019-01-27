@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/dumbbell.obj-5c497b9c0d38e9f20f9aadd85a6ddc18.mesh"
+
+[deps]
+
+files=[ "res://.import/dumbbell.obj-5c497b9c0d38e9f20f9aadd85a6ddc18.mesh" ]
+
+source_file="res://resources/models/dumbbell.obj"
+dest_files=[ "res://.import/dumbbell.obj-5c497b9c0d38e9f20f9aadd85a6ddc18.mesh", "res://.import/dumbbell.obj-5c497b9c0d38e9f20f9aadd85a6ddc18.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
