@@ -32,14 +32,18 @@ sync func remove():
 	queue_free()
 
 func pickup():
-	print(str(get_network_master()))
 	if picked_up:
 		return false
-	print("claming object "+str(get_tree().get_network_unique_id()))
-	set_network_master(get_tree().get_network_unique_id())
-	rset('picked_up',true)
-	print(str(get_network_master()))
-	return true
+	if get_tree().is_network_server():
+		set_network_id(1)
+		rset('picked_up',true)
+		print(str(get_network_master()))
+		return true
+	else:
+		rpc_id(1,'change_owner',get_tree().get_network_unique_id())
+		
+remote func change_owner(id):
+	set_network_master(id)
 
 func _process(delta):
 	if is_network_master():
