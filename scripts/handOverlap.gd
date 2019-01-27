@@ -27,8 +27,12 @@ func _button_down(button):
 				for body in bodies:
 					if body is RigidBody:
 						if !("NO_PICKUP" in body):
-							rigid_body = body
-							break
+							var safe = true
+							if held_object.has_method("pickup"):
+								safe = held_object.pickup()
+							if safe:
+								rigid_body = body
+								break
 			if rigid_body != null:
 				held_object = rigid_body
 				held_object_old_mode = held_object.mode
