@@ -15,7 +15,6 @@ func _ready():
 	# Initialization here
 	bag_check = get_node("CollisionShape/Area")
 	global = get_node("/root/global")
-	global.connect("make_master",self,'make_master')
 	pass
 
 func dropped():
