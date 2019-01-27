@@ -5,6 +5,9 @@ extends Spatial
 # var b = "textvar"
 var global
 
+var current_standing_point = null
+var current_total = 0;
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -21,6 +24,17 @@ func setHand(setBag):
 	else:
 		newHand = global.hand
 	get_node("VROrigin/rightHand").add_child(newHand)
+	
 func _process(delta):
 	if global.peer.get_connection_status() == 2:
+		rset_unreliable("ready",ready)
 		rset_unreliable("slave_transform",self.global_transform)
+
+func teleport_to_standing_point():
+	if current_standing_point!=null:
+		var newLoc = get_ndoe(current_standing_point).global_translate
+		self.global_transform = newLoc
+		
+func reset():
+	current_total = 0;
+	current_standing_point = null;

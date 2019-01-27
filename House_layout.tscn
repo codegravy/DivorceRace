@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://elements/hallway_door.tscn" type="PackedScene" id=1]
+
+[node name="house" type="Spatial" index="0"]
+
+[node name="Hallway" type="Spatial" parent="." index="0"]
+
+[node name="Room1" type="Spatial" parent="." index="1"]
+
+[node name="hallway_door" parent="Room1" index="0" instance=ExtResource( 1 )]
+
+hallway = NodePath("../../Hallway")
+room = NodePath("..")
+
+[node name="Room2" type="Spatial" parent="." index="2"]
+
+[node name="Room3" type="Spatial" parent="." index="3"]
+
+[node name="Room4" type="Spatial" parent="." index="4"]
+
+[node name="Room5" type="Spatial" parent="." index="5"]
+
+[node name="Room6" type="Spatial" parent="." index="6"]
+
+

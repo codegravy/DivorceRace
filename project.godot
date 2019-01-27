@@ -18,6 +18,8 @@ config/icon="res://resources/textures/MainTitle.png"
 [autoload]
 
 global="*res://scripts/global.gd"
+networking="*res://scripts/networking.gd"
+loadPlayer="*res://scripts/loadPlayer.gd"
 
 [gdnative]
 
