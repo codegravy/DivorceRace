@@ -16,6 +16,10 @@ func _ready():
 		OS.vsync_enabled = false
 		Engine.target_fps = 90
 		global.players.add_child(global.player)
+		global.vr = true
+	else:
+		global.player = load("res://elements/player/spectator.tscn").instance()
+		global.players.add_child(global.player)
 
 func createMultiPlayer(id):
 	pass

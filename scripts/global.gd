@@ -9,6 +9,7 @@ var ready = false
 var networking
 var players_configured = []
 var players
+var vr = false
 
 func _ready():
 	networking = get_node("/root/networking")
