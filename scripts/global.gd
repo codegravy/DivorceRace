@@ -49,7 +49,7 @@ func _client_connected(id):
 	
 func _client_disconnected(id):
 	print("Client " + str(id) + " disconnected")
-	var newClient = get_node("/root/players/").getNode(str(id))
+	var newClient = get_node("/root/players/").get_node(str(id))
 	get_node("/root/container/players/").remove_child(newClient)
 remote func existing_players(players):
 	for player in players:

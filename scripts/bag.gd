@@ -6,7 +6,9 @@ extends Node
 var totalValue = 0;
 var totalSize = 10;
 var currentSize = 0;
+
 export var bag = true
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -18,6 +20,11 @@ func addItem(value,size):
 		return true
 	else:
 		return false
+		
+func emptyBag():
+	global.savedValue += totalValue
+	totalValue = 0;
+	currentSize = 0;
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
