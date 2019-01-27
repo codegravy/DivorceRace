@@ -7,10 +7,12 @@ export var size = 1;
 export var value = 1;
 var bag_check
 slave var slave_transform = Transform()
+var global
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	bag_check = get_node("CollisionShape/Area")
+	global = get_node("/root/global")
 	pass
 
 func dropped():
@@ -25,6 +27,8 @@ func dropped():
 sync func remove():
 	queue_free()
 func _process(delta):
+	if !global.ready:
+		return
 	if is_network_master():
 		rset_unreliable("slave_transform",global_transform)
 	else:

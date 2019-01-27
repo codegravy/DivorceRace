@@ -10,11 +10,15 @@ var hand = load("res://elements/player/playerHand.tscn").instance()
 var players = Node.new();
 var vr = false
 var peer = null
+var ready = false
+
+var rooms = {
+	"test":"res://testScene.tscn"
+}
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	var global = get_node("/root/global")
 	var vr = ARVRServer.find_interface("OpenVR")
 	setupNetwork()
 	if vr and vr.initialize():
@@ -22,9 +26,9 @@ func _ready():
 		get_viewport().hdr = false
 		OS.vsync_enabled = false
 		Engine.target_fps = 90
-		global.vr = true
-		global.player.set_name(str(get_tree().get_network_unique_id()))
-		get_node("/root/container/players/").add_child(global.player)
+		vr = true
+		player.set_name(str(get_tree().get_network_unique_id()))
+		get_node("/root/container/players/").add_child(player)
 	pass
 	
 func setupNetwork():
@@ -34,11 +38,14 @@ func setupNetwork():
 	get_tree().set_meta("network_peer",peer)
 	get_tree().connect("network_peer_connected", self, "_client_connected")
 	get_tree().connect("network_peer_disconnected", self, "_client_disconnected")
-
+	
+func player_ready():
+	rpc_id(1,"player_ready",get_tree().get_network_unique_id())
 	
 remote func ready():
-	global.player.set_network_master(get_tree().get_network_unique_id())
-	print(global.player.is_network_master())
+	player.set_network_master(get_tree().get_network_unique_id())
+	ready = true
+	print(player.is_network_master())
 func _client_connected(id):
 	if id == peer.get_unique_id() || id == 1:
 		return;
@@ -49,7 +56,7 @@ func _client_connected(id):
 	
 func _client_disconnected(id):
 	print("Client " + str(id) + " disconnected")
-	var newClient = get_node("/root/players/").get_node(str(id))
+	var newClient = get_node("/root/container/players/").get_node(str(id))
 	get_node("/root/container/players/").remove_child(newClient)
 remote func existing_players(players):
 	for player in players:
@@ -58,6 +65,18 @@ remote func existing_players(players):
 		var newPeer = load("res://elements/player/fakePlayer.tscn").instance()
 		newPeer.set_name(str(id))
 		get_node("/root/container/players").add_child(newPeer)
+		
+remote func pre_configure_game(id):
+	get_tree().set_pause(true)
+	var myId = get_tree().get_network_unique_id()
+	var world = load(rooms[id]).instance()
+	var container = get_node("/root/container/level_container")
+	container.get_child(0).queue_free()
+	container.add_child(world)
+	rpc_id(1,"done_preconfiguring",myId)
+	
+remote func post_configure_game():
+	get_tree().set_pause(false)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
