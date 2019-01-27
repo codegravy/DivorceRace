@@ -6,39 +6,21 @@
 
 extents = Vector3( 2.24588, 18.4716, 41.348 )
 
-[node name="RigidBody" type="RigidBody" index="0"]
+[node name="StaticBody" type="StaticBody"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77369, 4.80132, 1.43232 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.68449, -4.55276, -1.43676 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-mode = 1
-mass = 1.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = false
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-linear_velocity = Vector3( 0, 0, 0 )
-linear_damp = -1.0
-angular_velocity = Vector3( 0, 0, 0 )
-angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 0.0438554, 0, 0, 0, 0.0919311, 0, 0, 0, 0.0780125, -7.15141, -3.51727, -1.68856 )
+transform = Transform( 0.0438554, 0, 0, 0, 0.0919311, 0, 0, 0, 0.0780125, -2.46692, 1.03549, -0.2518 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -56,7 +38,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 0.0438554, 0, 0, 0, 0.0919311, 0, 0, 0, 0.0780125, -4.643, -3.08434, -1.69864 )
+transform = Transform( 0.0438554, 0, 0, 0, 0.0919311, 0, 0, 0, 0.0780125, 0.0414872, 1.46842, -0.26188 )
 shape = SubResource( 1 )
 disabled = false
 
