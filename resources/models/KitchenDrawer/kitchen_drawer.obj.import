@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/kitchen_drawer.obj-0bfa9602a6aba538dc5d1778a4933c3c.mesh"
+
+[deps]
+
+files=[ "res://.import/kitchen_drawer.obj-0bfa9602a6aba538dc5d1778a4933c3c.mesh" ]
+
+source_file="res://resources/models/KitchenDrawer/kitchen_drawer.obj"
+dest_files=[ "res://.import/kitchen_drawer.obj-0bfa9602a6aba538dc5d1778a4933c3c.mesh", "res://.import/kitchen_drawer.obj-0bfa9602a6aba538dc5d1778a4933c3c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

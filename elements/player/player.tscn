@@ -97,6 +97,14 @@ reverb_bus_uniformity = 0.0
 shape = SubResource( 2 )
 disabled = false
 
+[node name="findDoor" type="RayCast" parent="VROrigin/leftHand" index="1"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector3( 0, 0, -1 )
+collision_mask = 4
+_sections_unfolded = [ "Transform" ]
+
 [node name="rightHand" type="ARVRController" parent="VROrigin" index="2"]
 
 controller_id = 2

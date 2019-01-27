@@ -9,6 +9,7 @@ var held_object_old_mode
 var grab_area
 var hand_mesh
 var grab_pos_node
+var raycast
 
 slave var slave_transform = Transform()
 
@@ -16,9 +17,17 @@ func _ready():
 	grab_area = get_node("Spatial/Area")
 	hand_mesh = get_node("Spatial/HandMesh")
 	grab_pos_node = get_node("Spatial")
+	raycast = get_node("findDoor")
 
 func _button_down(button):
 	print(button)
+	if button == 2:
+		raycast.force_raycast_update()
+		if raycast.is_colliding():
+			var door = raycast.get_collider()
+			if (door.has_method('on_click')):
+				door.on_click(self)
+
 	if button == 15:
 		if held_object == null:
 			var rigid_body = null;

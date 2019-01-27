@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://room_parts/floorWithCollision.tscn" type="PackedScene" id=1]
+
+[sub_resource type="PlaneShape" id=1]
+
+plane = Plane( 0, 1, 0, 0 )
+
+[sub_resource type="PlaneMesh" id=2]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 2, 2 )
+subdivide_width = 0
+subdivide_depth = 0
+
+[node name="Colliders" type="Spatial" index="0"]
+
+transform = Transform( 0.435234, 0, 0, 0, 1, 0, 0, 0, 0.435234, -0.252419, 3.50761, 0.368714 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.40906, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="CollisionShape3" type="CollisionShape" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 0.0349943, -0.434968, 0, 2.29621, 0.0349943, 0, -1.49226, 7.09482 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="MeshInstance2" parent="." index="2" instance=ExtResource( 1 )]
+
+transform = Transform( 10.9988, 0, 0, 0, 1, 0, 0, 0, 10.9988, 0, -3.45901, 0 )
+mesh = SubResource( 2 )
+
+

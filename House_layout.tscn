@@ -1,23 +1,57 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://elements/hallway_door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/house_controller.gd" type="Script" id=1]
+[ext_resource path="res://Room0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://elements/hallway_door.tscn" type="PackedScene" id=3]
 
-[node name="house" type="Spatial"]
+[node name="house" type="Spatial" index="0"]
 
-[node name="Hallway" type="Spatial" parent="." index="0"]
+script = ExtResource( 1 )
+point1 = NodePath("Room1")
+point2 = NodePath("Room3")
 
-[node name="Room1" type="Spatial" parent="." index="1"]
+[node name="Room1" type="Spatial" parent="." index="0"]
 
-[node name="hallway_door" parent="Room1" index="0" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6803, 0, 0 )
 
-[node name="Room2" type="Spatial" parent="." index="2"]
+[node name="Spatial" parent="Room1" index="0" instance=ExtResource( 2 )]
 
-[node name="Room3" type="Spatial" parent="." index="3"]
+[node name="hallway_door" parent="Room1" index="1" instance=ExtResource( 3 )]
 
-[node name="Room4" type="Spatial" parent="." index="4"]
+transform = Transform( 0.037, 0, 0, 0, 0.037, 0, 0, 0, 0.037, -1.0472, 0.613481, -2.87122 )
+next_room = NodePath("../../Room2")
 
-[node name="Room5" type="Spatial" parent="." index="5"]
+[node name="Room2" type="Spatial" parent="." index="1"]
 
-[node name="Room6" type="Spatial" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7336, 0, 0 )
+
+[node name="Spatial" parent="Room2" index="0" instance=ExtResource( 2 )]
+
+[node name="room2_door" parent="Room2" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 0.037, 0, 0, 0, 0.037, 0, 0, 0, 0.037, -1.08247, 0.668507, -2.86308 )
+next_room = NodePath("../../Room3")
+
+[node name="Room3" type="Spatial" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.5256 )
+
+[node name="Spatial" parent="Room3" index="0" instance=ExtResource( 2 )]
+
+[node name="hallway_door" parent="Room3" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 0.037, 0, 0, 0, 0.037, 0, 0, 0, 0.037, -1.05749, 0.6711, -2.86943 )
+next_room = NodePath("../../Room4")
+
+[node name="Room4" type="Spatial" parent="." index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.4112 )
+
+[node name="Spatial" parent="Room4" index="0" instance=ExtResource( 2 )]
+
+[node name="hallway_door" parent="Room4" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 0.037, 0, 0, 0, 0.037, 0, 0, 0, 0.037, -1.10322, 0.648167, -2.83394 )
+next_room = NodePath("../../Room1")
 
 
