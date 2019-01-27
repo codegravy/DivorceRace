@@ -44,7 +44,7 @@ func setupNetwork():
 func ready():
 	rpc_id(1, "player_ready", str(peer.get_unique_id()))
 func _client_connected(id):
-	if id == peer.get_unique_id():
+	if id == peer.get_unique_id() || id == 1:
 		return;
 	print("Peer " + str(id) + " joined")
 	var newPeer = load("res://elements/player/fakePlayer.tscn").instance()
@@ -55,6 +55,13 @@ func _client_disconnected(id):
 	print("Client " + str(id) + " disconnected")
 	var newClient = get_node("/root/players/").getNode(str(id))
 	get_node("/root/players/").remove_child(newClient)
+remote func existing_players(players):
+	for player in players:
+		var id = player
+		print("Peer " + str(id) + " joined")
+		var newPeer = load("res://elements/player/fakePlayer.tscn").instance()
+		newPeer.set_name(str(id))
+		get_node("/root/players").add_child(newPeer)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
