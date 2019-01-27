@@ -20,8 +20,6 @@ subdivide_depth = 0
 
 [node name="Walls" type="Spatial" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Door" type="StaticBody" parent="Walls" index="0" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0673631, 0.0314221, -3.21552 )
@@ -36,7 +34,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="LDoor" type="StaticBody" parent="Walls" index="1" instance=ExtResource( 1 )]
 
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.51922, 0.0433433, 0.513523 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -2.33941, 0.0433433, 0.513523 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -49,7 +47,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RDoor" type="StaticBody" parent="Walls" index="2" instance=ExtResource( 1 )]
 
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 3.52732, 0.0306387, 0.163604 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 2.38609, 0.0306387, 0.163604 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -95,13 +93,13 @@ material/0 = null
 
 [node name="Items" type="Spatial" parent="." index="2"]
 
-[node name="RigidBody" parent="Items" index="0" instance=ExtResource( 2 )]
+[node name="ArmChair" parent="Items" index="0" instance=ExtResource( 2 )]
 
-transform = Transform( 0.745589, 0, 0.666406, 0, 1, 0, -0.666406, 0, 0.745589, -2.09122, 1.10492, -1.75238 )
+transform = Transform( -0.902448, 0, 0.430799, 0, 1, 0, -0.430799, 0, -0.902448, -1.03332, 1.10492, 2.00003 )
 
-[node name="RigidBody2" type="RigidBody" parent="Items" index="1" instance=ExtResource( 3 )]
+[node name="Clock" type="RigidBody" parent="Items" index="1" instance=ExtResource( 3 )]
 
-transform = Transform( -0.809253, 0, -0.587461, 0, 1, 0, 0.587461, 0, -0.809253, 2.31132, 0.481786, -1.94536 )
+transform = Transform( -0.809253, 0, -0.587461, 0, 1, 0, 0.587461, 0, -0.809253, 1.51493, 0.375335, -0.934988 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
