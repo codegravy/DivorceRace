@@ -7,10 +7,9 @@
 [ext_resource path="res://elements/plate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://elements/cup.tscn" type="PackedScene" id=6]
 
-
 [node name="Spatial" type="Spatial" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.35305, 5.59602, 2.04737 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93326, 5.59602, 2.04737 )
 
 [node name="Room" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -18,11 +17,11 @@ transform = Transform( 0.830041, 0, 0, 0, 0.830041, 0, 0, 0, 0.835162, -0.690557
 
 [node name="Items" type="Spatial" parent="." index="1"]
 
-transform = Transform( 0.885628, 0, 0, 0, 0.885628, 0, 0, 0, 1, 0.117194, -0.531589, -0.496943 )
+transform = Transform( 0.885628, 0, 0, 0, 0.885628, 0, 0, 0, 1, 0.117194, -1.75382, -0.496943 )
 
 [node name="RigidBody4" parent="Items" index="0" instance=ExtResource( 2 )]
 
-transform = Transform( 0.435234, 0, 0, 0, 0.996627, -0.0357145, 0, 0.0820581, 0.433766, -7.57429, -5.05033, -3.82707 )
+transform = Transform( 0.435234, 0, 0, 0, 0.996627, -0.0357145, 0, 0.0820581, 0.433766, -7.57429, -5.11926, -2.25707 )
 
 [node name="RigidBody" parent="Items" index="1" instance=ExtResource( 3 )]
 
