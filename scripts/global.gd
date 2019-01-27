@@ -12,6 +12,8 @@ var vr = false
 var peer = null
 var ready = false
 
+signal make_master
+
 var rooms = {
 	"test":"res://testScene.tscn"
 }
