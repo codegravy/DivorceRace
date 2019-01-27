@@ -1,11 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/valueObject.gd" type="Script" id=1]
-[ext_resource path="res://resources/models/Laptop.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://resources/models/Armchair.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 0.389903, 0.300244, 0.334608 )
+extents = Vector3( 0.757406, 0.524202, 0.508792 )
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 1, 0.394753, 1 )
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 0.183878, 1, 1 )
+
+[sub_resource type="BoxShape" id=4]
+
+extents = Vector3( 0.187701, 1, 1 )
+
+[sub_resource type="BoxShape" id=5]
+
+extents = Vector3( 1, 1, 0.222977 )
 
 [node name="RigidBody" type="RigidBody" index="0"]
 
@@ -40,13 +56,13 @@ value = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.169319, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.571905, -0.199293 )
 shape = SubResource( 1 )
 disabled = false
 
 [node name="MeshInstance" type="MeshInstance" parent="CollisionShape" index="0"]
 
-transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0.0320306, 0.0488989, 0 )
+transform = Transform( 0.744833, 0, 0, 0, 0.510402, 0, 0, 0, 0.48348, -0.00117926, 0.00105643, -0.00301673 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -59,13 +75,11 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
-material/1 = null
-material/2 = null
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area" type="Area" parent="CollisionShape" index="1"]
 
-transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0.0320306, 0.0488989, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571905, 0.199293 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -87,10 +101,28 @@ reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 
-[node name="CollisionShape2" type="CollisionShape" parent="CollisionShape/Area" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="CollisionShape/Area" index="0"]
 
-transform = Transform( 2.85714, 0, 0, 0, 2.85714, 0, 0, 0, 2.85714, -0.091516, -0.139711, 0 )
-shape = SubResource( 1 )
+transform = Transform( 0.744833, 0, 0, 0, 0.510402, 0, 0, 0, 0.48348, -0.00117926, -0.880314, -0.20231 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="CollisionShape2" type="CollisionShape" parent="CollisionShape/Area" index="1"]
+
+transform = Transform( 0.744833, 0, 0, 0, 0.510402, 0, 0, 0, 0.48348, -0.610934, -0.570848, -0.20231 )
+shape = SubResource( 3 )
+disabled = false
+
+[node name="CollisionShape3" type="CollisionShape" parent="CollisionShape/Area" index="2"]
+
+transform = Transform( 0.744833, 0, 0, 0, 0.510402, 0, 0, 0, 0.48348, 0.601691, -0.570848, -0.20231 )
+shape = SubResource( 4 )
+disabled = false
+
+[node name="CollisionShape4" type="CollisionShape" parent="CollisionShape/Area" index="3"]
+
+transform = Transform( 0.744833, 0, 0, 0, 0.510402, 0, 0, 0, 0.48348, -0.00117926, -0.570848, -0.581048 )
+shape = SubResource( 5 )
 disabled = false
 
 
