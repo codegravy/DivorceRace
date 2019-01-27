@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://room_parts/Wall_w_Door.tscn" type="PackedScene" id=1]
-[ext_resource path="res://room_parts/Wall_Blank.tscn" type="PackedScene" id=2]
-[ext_resource path="res://elements/Couchs.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/valueObject.gd" type="Script" id=4]
-[ext_resource path="res://elements/table.tscn" type="PackedScene" id=5]
-[ext_resource path="res://elements/tv.tscn" type="PackedScene" id=6]
-[ext_resource path="res://elements/scoocerBall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://elements/DumbBells.tscn" type="PackedScene" id=8]
-[ext_resource path="res://elements/pictureFrame.tscn" type="PackedScene" id=9]
+[ext_resource path="res://elements/table.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/valueObject.gd" type="Script" id=3]
+[ext_resource path="res://elements/KitchenDrawer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://elements/cup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://elements/knife.tscn" type="PackedScene" id=6]
+[ext_resource path="res://elements/pan.tscn" type="PackedScene" id=7]
+[ext_resource path="res://elements/plate.tscn" type="PackedScene" id=8]
+[ext_resource path="res://elements/bowl.tscn" type="PackedScene" id=9]
 
 [sub_resource type="PlaneShape" id=1]
 
@@ -35,17 +35,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0673631, 0.0314221, -2.4244
 
 [node name="LDoor" parent="Walls" index="1" instance=ExtResource( 1 )]
 
-transform = Transform( -3.22135e-008, 0, -1, 0, 1, 0, 0.736959, 0, -4.37114e-008, 2.08441, 0.0433433, -0.542141 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -0.736959, 0, -3.22135e-008, -2.33941, 0.0433433, -0.542141 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Blank" parent="Walls" index="2" instance=ExtResource( 2 )]
+[node name="RDoor" parent="Walls" index="2" instance=ExtResource( 1 )]
 
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, -2.07081, 0.243139, -1.14206 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 0.736959, 0, -3.22135e-008, 2.38609, 0.0306387, -0.800016 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls" index="3"]
 
-transform = Transform( 0.322061, 0, -1.40777e-008, -1.40777e-008, 6.15357e-016, -0.322061, 0, 1, 1.91069e-015, 0.00475407, 0.725158, 1.96641 )
+transform = Transform( 0.42804, 0, -1.87102e-008, -1.87102e-008, 8.17849e-016, -0.42804, 0, 1, 1.91069e-015, 0, 0, 1.63873 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
@@ -85,9 +85,9 @@ material/0 = null
 
 [node name="Items" type="Spatial" parent="." index="2"]
 
-[node name="Couch" type="RigidBody" parent="Items" index="0" instance=ExtResource( 3 )]
+[node name="Table" type="RigidBody" parent="Items" index="0" instance=ExtResource( 2 )]
 
-transform = Transform( -1.96761e-008, 0, 0.583668, 0, 0.687108, 0, -0.48907, 0, -2.77196e-008, -1.45408, 0.0429233, 0.166894 )
+transform = Transform( -0.00657866, 0, -0.613512, 0, 0.361964, 0, 0.466596, 0, -0.00500329, 0.475152, 0.110434, 1.05288 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -113,14 +113,107 @@ linear_velocity = Vector3( 0, 0, 0 )
 linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
-script = ExtResource( 4 )
+script = ExtResource( 3 )
+size = 1
+value = 1
+
+[node name="Drawer" type="RigidBody" parent="Items" index="1" instance=ExtResource( 4 )]
+
+transform = Transform( 0.480056, 0, 0.414878, 0, 0.680458, 0, -0.414878, 0, 0.480056, -1.27315, 0.043605, -1.61368 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+
+[node name="Cup" type="RigidBody" parent="Items" index="2" instance=ExtResource( 5 )]
+
+transform = Transform( 0.480056, 0, 0.414878, 0, 0.680458, 0, -0.414878, 0, 0.480056, 1.39473, 0.570793, 0.629876 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 3 )
+size = 1
+value = 1
+
+[node name="Knife" type="RigidBody" parent="Items" index="3" instance=ExtResource( 6 )]
+
+transform = Transform( 0.480056, 0, 0.414878, 0, 0.680458, 0, -0.414878, 0, 0.480056, -0.0174752, 0.677714, 0.649494 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 size = 1
 value = 1
 
-[node name="Table" type="RigidBody" parent="Items" index="1" instance=ExtResource( 5 )]
+[node name="Pan" type="RigidBody" parent="Items" index="4" instance=ExtResource( 7 )]
 
-transform = Transform( 0.243358, 0, -0.214929, 0, 1, 0, 0.214929, 0, 0.243358, 0.961932, -0.411321, 0.848039 )
+transform = Transform( 0.403933, 0, 0.914788, 0, 1, 0, -0.914788, 0, 0.403933, -0.86992, 0.636866, 0.658084 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -146,13 +239,13 @@ linear_velocity = Vector3( 0, 0, 0 )
 linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 size = 1
 value = 1
 
-[node name="TV" type="RigidBody" parent="Items" index="2" instance=ExtResource( 6 )]
+[node name="Plate" type="RigidBody" parent="Items" index="5" instance=ExtResource( 8 )]
 
-transform = Transform( -0.376359, 0, 0.322041, 0, 0.60083, 0, -0.322041, 0, -0.376359, 1.40134, 0.976335, 0.640314 )
+transform = Transform( 0.403933, 0, 0.914788, 0, 1, 0, -0.914788, 0, 0.403933, 0.713499, 0.4893, 0.840551 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -178,13 +271,13 @@ linear_velocity = Vector3( 0, 0, 0 )
 linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 size = 1
 value = 1
 
-[node name="ScoocerBall" type="RigidBody" parent="Items" index="3" instance=ExtResource( 7 )]
+[node name="Bowl" type="RigidBody" parent="Items" index="6" instance=ExtResource( 9 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23071, -0.336697, -1.68112 )
+transform = Transform( 0.403933, 0, 0.914788, 0, 1, 0, -0.914788, 0, 0.403933, 1.46965, 0.190608, -1.46286 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -210,71 +303,7 @@ linear_velocity = Vector3( 0, 0, 0 )
 linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
-script = ExtResource( 4 )
-size = 1
-value = 1
-
-[node name="DumbBell" type="RigidBody" parent="Items" index="4" instance=ExtResource( 8 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.749325, 0.229768, -1.21996 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = false
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-linear_velocity = Vector3( 0, 0, 0 )
-linear_damp = -1.0
-angular_velocity = Vector3( 0, 0, 0 )
-angular_damp = -1.0
-script = ExtResource( 4 )
-size = 1
-value = 1
-
-[node name="PFrame" type="RigidBody" parent="Items" index="5" instance=ExtResource( 9 )]
-
-transform = Transform( 0.878122, 0, 0.478437, 0, 1, 0, -0.478437, 0, 0.878122, -1.56241, 4.08997, -0.406928 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = false
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-linear_velocity = Vector3( 0, 0, 0 )
-linear_damp = -1.0
-angular_velocity = Vector3( 0, 0, 0 )
-angular_damp = -1.0
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 size = 1
 value = 1
 
