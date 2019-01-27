@@ -19,12 +19,14 @@ func _ready():
 func dropped():
 	print(get_network_master())
 	if is_network_master():
+		print("dropping")
 		rset('picked_up',false)
 		var bodies = bag_check.get_overlapping_bodies()
 		if len(bodies) > 0:
 			for body in bodies:
 				if ("bag" in body):
 					if body.addItem(self.size,self.value):
+						print('scoring ' + str(value))
 						rpc("remove")
 						break
 
@@ -38,12 +40,12 @@ func pickup():
 	return true
 		
 sync func change_owner(id):
+	print("change to " + str(id))
 	set_network_master(id)
 	picked_up = true
 
 func _process(delta):
 	if is_network_master():
-		print("updating")
 		rset_unreliable("slave_transform",global_transform)
 	else:
 		self.global_transform = slave_transform
