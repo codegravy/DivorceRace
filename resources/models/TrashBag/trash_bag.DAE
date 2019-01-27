@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
-  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2019-01-27T14:57:23Z</created><keywords></keywords><modified>2019-01-27T14:57:23Z</modified><revision></revision><subject></subject><title></title><unit meter="0.025400" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
+  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2019-01-27T15:29:22Z</created><keywords></keywords><modified>2019-01-27T15:29:22Z</modified><revision></revision><subject></subject><title></title><unit meter="0.025400" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
   <library_images>
     <image id="MapFBXASC032FBXASC0350-image" name="MapFBXASC032FBXASC0350"><init_from>file://C:\Users\ajk5164\Downloads\Divorce Race Picture\67941747-black-trash-bag-plastic-texture.jpg</init_from></image>
   </library_images>
@@ -21834,7 +21834,7 @@
   </library_geometries>
   <library_visual_scenes>
     <visual_scene id="trash_bag" name="trash_bag">
-      <node name="Bag" id="Bag" sid="Bag"><matrix sid="matrix">0.419547 0.000000 0.000000 0.000000 0.000000 0.000000 0.419547 0.000000 0.000000 -0.419547 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#Bag-lib"><bind_material><technique_common><instance_material symbol="MaterialFBXASC032FBXASC0352" target="#MaterialFBXASC032FBXASC0352"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="Bag" id="Bag" sid="Bag"><matrix sid="matrix">0.191572 0.000000 0.000000 0.000000 0.000000 0.000000 0.191572 0.000000 0.000000 -0.191572 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#Bag-lib"><bind_material><technique_common><instance_material symbol="MaterialFBXASC032FBXASC0352" target="#MaterialFBXASC032FBXASC0352"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
       <extra><technique profile="MAX3D"><frame_rate>30.000000</frame_rate></technique><technique profile="FCOLLADA"><start_time>0.000000</start_time><end_time>3.333333</end_time></technique></extra>
     </visual_scene>
   </library_visual_scenes>
