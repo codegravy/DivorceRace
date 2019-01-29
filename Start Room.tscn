@@ -38,6 +38,6 @@ size = 1.0
 near = 0.05
 far = 100.0
 
-[node name="Node" parent="ViewportContainer/Viewport" index="1" instance=ExtResource( 6 )]
+[node name="Node" parent="Camera" index="0" instance=ExtResource( 6 )]
 
 
