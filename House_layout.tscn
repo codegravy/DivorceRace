@@ -7,7 +7,7 @@
 [ext_resource path="res://Rooms/Room2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Rooms/Room0.tscn" type="PackedScene" id=6]
 
-[node name="house" type="Spatial" index="0"]
+[node name="house" type="Spatial"]
 
 script = ExtResource( 1 )
 point1 = NodePath("Room1")

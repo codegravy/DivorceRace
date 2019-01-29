@@ -25,6 +25,11 @@ loadPlayer="*res://scripts/loadPlayer.gd"
 
 singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
 
+[input]
+
+ready=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
+ ]
+
 [physics]
 
 common/physics_fps=90

@@ -18,7 +18,7 @@ func _ready():
 	pass;
 	
 func setHand(setBag):
-	var currentRightHand = get_node("VROrigin/rightHand").get_child(0);
+	var currentRightHand = get_node("Viewport/VROrigin/rightHand").get_child(0);
 	print(currentRightHand)
 	get_node("Viewport/VROrigin/rightHand").remove_child(currentRightHand);
 	var newHand
@@ -36,7 +36,7 @@ func teleport_to_standing_point():
 	if current_standing_point!=null:
 		print(current_standing_point)
 		var newLoc = get_node(current_standing_point).global_transform
-		self.global_transform = newLoc
+		$Viewport/VROrigin.global_transform = newLoc
 		
 func reset():
 	current_total = 0;
