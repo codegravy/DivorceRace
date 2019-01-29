@@ -20,13 +20,13 @@ func _ready():
 func setHand(setBag):
 	var currentRightHand = get_node("VROrigin/rightHand").get_child(0);
 	print(currentRightHand)
-	get_node("VROrigin/rightHand").remove_child(currentRightHand);
+	get_node("Viewport/VROrigin/rightHand").remove_child(currentRightHand);
 	var newHand
 	if setBag:
 		newHand = bag
 	else:
 		newHand = hand
-	get_node("VROrigin/rightHand").add_child(newHand)
+	get_node("Viewport/VROrigin/rightHand").add_child(newHand)
 
 func _process(delta):
 	if networking.peer.get_connection_status() == 2:
