@@ -5,7 +5,6 @@ extends Node
 # var b = "textvar"
 var peer
 var players_ready = []
-const server_ip = "129.244.99.153"
 const PORT = 5553
 const MAX_PLAYERS = 3
 var global
@@ -20,28 +19,33 @@ func _ready():
 	peer = NetworkedMultiplayerENet.new()
 	var ips = IP.get_local_addresses()
 	print(ips)
-	if (server_ip in ips):
-		startServer()
-	else:
-		startClient()
 	global.player.set_name(str(peer.get_unique_id()))
 	pass
 
-func startServer():
+func startServer(ui):
 	print("Starting Server")
 	peer.create_server(PORT, MAX_PLAYERS)
 	get_tree().set_network_peer(peer)
 	get_tree().connect("network_peer_connected", self, "_client_connected")
 	get_tree().connect("network_peer_disconnected", self, "_client_disconnected")
 	pass
+
+func stopServer(ui):
+	get_tree().set_network_peer(null)
 	
-func startClient():
+func startClient(ip,ui):
 	print("Starting Client")
-	peer.create_client(server_ip,5553);
+	peer.create_client(ip,5553);
 	get_tree().set_network_peer(peer)
 	get_tree().set_meta("network_peer",peer)
 	get_tree().connect("network_peer_connected", self, "_client_connected")
 	get_tree().connect("network_peer_disconnected", self, "_client_disconnected")
+	get_tree().connect("connected_to_server",ui,"_connected")
+	get_tree().connect("connection_failed",ui,"_disconnected")
+	get_tree().connect("server_disconnected",ui,"_disconnected")
+
+func stopClient(ui):
+	get_tree().set_network_peer(null)
 
 func _client_connected(id):
 	print("Peer " + str(id) + " joined")

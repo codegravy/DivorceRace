@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Start Room.gd" type="Script" id=1]
 [ext_resource path="res://startFloor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://startPlate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/startPlate.gd" type="Script" id=4]
 [ext_resource path="res://elements/startTable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://networkingGUI.tscn" type="PackedScene" id=6]
 
 [node name="container" type="Spatial" index="0"]
 
@@ -81,5 +82,7 @@ fov = 70.1369
 size = 1.0
 near = 0.05
 far = 100.0
+
+[node name="Node" parent="ViewportContainer/Viewport" index="1" instance=ExtResource( 6 )]
 
 
