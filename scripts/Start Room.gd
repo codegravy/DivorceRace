@@ -6,7 +6,7 @@ extends Spatial
 
 func update_preview_size():
 	var new_size = OS.window_size
-	$ViewportContainer/Viewport.size = new_size
+	#$ViewportContainer/Viewport.size = new_size
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
