@@ -19,22 +19,26 @@ func _ready():
 	peer = NetworkedMultiplayerENet.new()
 	var ips = IP.get_local_addresses()
 	print(ips)
-	global.player.set_name(str(peer.get_unique_id()))
 	pass
 
 func startServer(ui):
 	print("Starting Server")
+	peer = NetworkedMultiplayerENet.new()
 	peer.create_server(PORT, MAX_PLAYERS)
 	get_tree().set_network_peer(peer)
 	get_tree().connect("network_peer_connected", self, "_client_connected")
 	get_tree().connect("network_peer_disconnected", self, "_client_disconnected")
+	global.player.set_name(str(peer.get_unique_id()))
 	pass
 
 func stopServer(ui):
 	get_tree().set_network_peer(null)
+	get_tree().disconnect("network_peer_connected", self, "_client_connected")
+	get_tree().disconnect("network_peer_disconnected", self, "_client_disconnected")
 	
 func startClient(ip,ui):
 	print("Starting Client")
+	peer = NetworkedMultiplayerENet.new()
 	peer.create_client(ip,5553);
 	get_tree().set_network_peer(peer)
 	get_tree().set_meta("network_peer",peer)
@@ -43,9 +47,15 @@ func startClient(ip,ui):
 	get_tree().connect("connected_to_server",ui,"_connected")
 	get_tree().connect("connection_failed",ui,"_disconnected")
 	get_tree().connect("server_disconnected",ui,"_disconnected")
+	global.player.set_name(str(peer.get_unique_id()))
 
 func stopClient(ui):
 	get_tree().set_network_peer(null)
+	get_tree().disconnect("network_peer_connected", self, "_client_connected")
+	get_tree().disconnect("network_peer_disconnected", self, "_client_disconnected")
+	get_tree().disconnect("connected_to_server",ui,"_connected")
+	get_tree().disconnect("connection_failed",ui,"_disconnected")
+	get_tree().disconnect("server_disconnected",ui,"_disconnected")
 
 func _client_connected(id):
 	print("Peer " + str(id) + " joined")
